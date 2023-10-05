@@ -1,0 +1,24 @@
+configVersion: v1alpha1
+branchConfigs:
+- name: kustomize-guestbook
+  appConfigs:
+    guestbook:
+      configManagement:
+        path: kustomize-guestbook
+        kustomize:
+          buildOptions: --load-restrictor None
+      outputPath: kustomize-guestbook
+      combineManifests: true
+
+- name: helm-guestbook
+  appConfigs:
+    guestbook:
+      configManagement:
+        path: helm-guestbook
+        helm:
+          namespace: my-namespace
+          k8sVersion: v1.18.1
+          apiVersions:
+          - apps/v1
+      outputPath: helm-guestbook
+      combineManifests: true
