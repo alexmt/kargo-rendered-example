@@ -16,6 +16,7 @@ branchConfigs:
       configManagement:
         path: helm-guestbook
         helm:
+          passCredentials: true
           namespace: my-namespace
           k8sVersion: v1.18.1
           apiVersions:
